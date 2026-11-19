@@ -1,0 +1,30 @@
+.class public final synthetic Lio/sentry/android/core/ContextUtils$$ExternalSyntheticLambda5;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lio/sentry/android/core/util/AndroidLazyEvaluator$AndroidEvaluator;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final evaluate(Landroid/content/Context;)Ljava/lang/Object;
+    .locals 0
+
+    .line 0
+    invoke-static {p1}, Lio/sentry/android/core/ContextUtils;->$r8$lambda$q9rYJvAOeesY655grfOSzb9xsQ8(Landroid/content/Context;)Landroid/content/pm/ApplicationInfo;
+
+    move-result-object p1
+
+    return-object p1
+.end method

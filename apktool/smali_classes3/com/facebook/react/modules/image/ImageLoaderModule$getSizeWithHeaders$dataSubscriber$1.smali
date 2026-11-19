@@ -1,0 +1,173 @@
+.class public final Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;
+.super Lcom/facebook/datasource/BaseDataSubscriber;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/facebook/react/modules/image/ImageLoaderModule;->getSizeWithHeaders(Ljava/lang/String;Lcom/facebook/react/bridge/ReadableMap;Lcom/facebook/react/bridge/Promise;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic $promise:Lcom/facebook/react/bridge/Promise;
+
+
+# direct methods
+.method constructor <init>(Lcom/facebook/react/bridge/Promise;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    .line 142
+    invoke-direct {p0}, Lcom/facebook/datasource/BaseDataSubscriber;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected onFailureImpl(Lcom/facebook/datasource/DataSource;)V
+    .locals 2
+
+    const-string v0, "dataSource"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 167
+    iget-object v0, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    const-string v1, "E_GET_SIZE_FAILURE"
+
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->getFailureCause()Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    invoke-interface {v0, v1, p1}, Lcom/facebook/react/bridge/Promise;->reject(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    return-void
+.end method
+
+.method protected onNewResultImpl(Lcom/facebook/datasource/DataSource;)V
+    .locals 6
+
+    const-string v0, "dataSource"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 144
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->isFinished()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 147
+    :cond_0
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->getResult()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/facebook/common/references/CloseableReference;
+
+    .line 148
+    const-string v0, "E_GET_SIZE_FAILURE"
+
+    if-eqz p1, :cond_1
+
+    .line 150
+    :try_start_0
+    invoke-virtual {p1}, Lcom/facebook/common/references/CloseableReference;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+    const-string v2, "get(...)"
+
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v1, Lcom/facebook/imagepipeline/image/CloseableImage;
+
+    .line 30
+    invoke-static {}, Lcom/facebook/react/bridge/Arguments;->createMap()Lcom/facebook/react/bridge/WritableMap;
+
+    move-result-object v2
+
+    .line 31
+    new-instance v3, Lcom/facebook/react/bridge/ReadableMapBuilder;
+
+    invoke-direct {v3, v2}, Lcom/facebook/react/bridge/ReadableMapBuilder;-><init>(Lcom/facebook/react/bridge/WritableMap;)V
+
+    .line 152
+    const-string v4, "width"
+
+    invoke-interface {v1}, Lcom/facebook/imagepipeline/image/CloseableImage;->getWidth()I
+
+    move-result v5
+
+    invoke-virtual {v3, v4, v5}, Lcom/facebook/react/bridge/ReadableMapBuilder;->put(Ljava/lang/String;I)V
+
+    .line 153
+    const-string v4, "height"
+
+    invoke-interface {v1}, Lcom/facebook/imagepipeline/image/CloseableImage;->getHeight()I
+
+    move-result v1
+
+    invoke-virtual {v3, v4, v1}, Lcom/facebook/react/bridge/ReadableMapBuilder;->put(Ljava/lang/String;I)V
+
+    .line 155
+    iget-object v1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    invoke-interface {v1, v2}, Lcom/facebook/react/bridge/Promise;->resolve(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 159
+    invoke-static {p1}, Lcom/facebook/common/references/CloseableReference;->closeSafely(Lcom/facebook/common/references/CloseableReference;)V
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    .line 157
+    :try_start_1
+    iget-object v2, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    invoke-interface {v2, v0, v1}, Lcom/facebook/react/bridge/Promise;->reject(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 159
+    invoke-static {p1}, Lcom/facebook/common/references/CloseableReference;->closeSafely(Lcom/facebook/common/references/CloseableReference;)V
+
+    return-void
+
+    :goto_0
+    invoke-static {p1}, Lcom/facebook/common/references/CloseableReference;->closeSafely(Lcom/facebook/common/references/CloseableReference;)V
+
+    throw v0
+
+    .line 162
+    :cond_1
+    iget-object p1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$getSizeWithHeaders$dataSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    const-string v1, "Failed to get the size of the image"
+
+    invoke-interface {p1, v0, v1}, Lcom/facebook/react/bridge/Promise;->reject(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method

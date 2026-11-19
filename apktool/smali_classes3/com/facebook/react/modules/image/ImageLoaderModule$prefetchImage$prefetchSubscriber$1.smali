@@ -1,0 +1,151 @@
+.class public final Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;
+.super Lcom/facebook/datasource/BaseDataSubscriber;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/facebook/react/modules/image/ImageLoaderModule;->prefetchImage(Ljava/lang/String;DLcom/facebook/react/bridge/Promise;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic $promise:Lcom/facebook/react/bridge/Promise;
+
+.field final synthetic $requestId:I
+
+.field final synthetic this$0:Lcom/facebook/react/modules/image/ImageLoaderModule;
+
+
+# direct methods
+.method constructor <init>(Lcom/facebook/react/modules/image/ImageLoaderModule;ILcom/facebook/react/bridge/Promise;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->this$0:Lcom/facebook/react/modules/image/ImageLoaderModule;
+
+    iput p2, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$requestId:I
+
+    iput-object p3, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    .line 192
+    invoke-direct {p0}, Lcom/facebook/datasource/BaseDataSubscriber;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected onFailureImpl(Lcom/facebook/datasource/DataSource;)V
+    .locals 3
+
+    const-string v0, "dataSource"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 209
+    :try_start_0
+    iget-object v0, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->this$0:Lcom/facebook/react/modules/image/ImageLoaderModule;
+
+    iget v1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$requestId:I
+
+    invoke-static {v0, v1}, Lcom/facebook/react/modules/image/ImageLoaderModule;->access$removeRequest(Lcom/facebook/react/modules/image/ImageLoaderModule;I)Lcom/facebook/datasource/DataSource;
+
+    .line 210
+    iget-object v0, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    const-string v1, "E_PREFETCH_FAILURE"
+
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->getFailureCause()Ljava/lang/Throwable;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Lcom/facebook/react/bridge/Promise;->reject(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 212
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->close()Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->close()Z
+
+    throw v0
+.end method
+
+.method protected onNewResultImpl(Lcom/facebook/datasource/DataSource;)V
+    .locals 3
+
+    const-string v0, "dataSource"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 194
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->isFinished()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 198
+    :cond_0
+    :try_start_0
+    iget-object v0, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->this$0:Lcom/facebook/react/modules/image/ImageLoaderModule;
+
+    iget v1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$requestId:I
+
+    invoke-static {v0, v1}, Lcom/facebook/react/modules/image/ImageLoaderModule;->access$removeRequest(Lcom/facebook/react/modules/image/ImageLoaderModule;I)Lcom/facebook/datasource/DataSource;
+
+    .line 199
+    iget-object v0, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-interface {v0, v1}, Lcom/facebook/react/bridge/Promise;->resolve(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 203
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->close()Z
+
+    return-void
+
+    :catchall_0
+    move-exception v0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    .line 201
+    :try_start_1
+    iget-object v1, p0, Lcom/facebook/react/modules/image/ImageLoaderModule$prefetchImage$prefetchSubscriber$1;->$promise:Lcom/facebook/react/bridge/Promise;
+
+    const-string v2, "E_PREFETCH_FAILURE"
+
+    invoke-interface {v1, v2, v0}, Lcom/facebook/react/bridge/Promise;->reject(Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 203
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->close()Z
+
+    return-void
+
+    :goto_0
+    invoke-interface {p1}, Lcom/facebook/datasource/DataSource;->close()Z
+
+    throw v0
+.end method

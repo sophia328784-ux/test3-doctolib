@@ -1,0 +1,87 @@
+.class public final Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source$Companion;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Companion"
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1786
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source$Companion;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final fromJson(Ljava/lang/String;)Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;
+    .locals 5
+
+    const-string v0, "jsonString"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1788
+    invoke-static {}, Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;->values()[Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;
+
+    move-result-object v0
+
+    .line 1816
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_1
+
+    aget-object v3, v0, v2
+
+    .line 1789
+    invoke-static {v3}, Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;->access$getJsonValue$p(Lcom/datadog/android/telemetry/model/TelemetryUsageEvent$Source;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    return-object v3
+
+    :cond_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    .line 1817
+    :cond_1
+    new-instance p1, Ljava/util/NoSuchElementException;
+
+    const-string v0, "Array contains no element matching the predicate."
+
+    invoke-direct {p1, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+.end method

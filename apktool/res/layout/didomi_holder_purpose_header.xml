@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingBottom="20.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dp" android:layout_marginRight="24.0dp" android:layout_marginStart="24.0dp" android:layout_marginEnd="24.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/purpose_list_description" android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/DidomiTextMedium" />
+    <androidx.appcompat.widget.AppCompatButton android:id="@id/purpose_privacy_policy_link" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dp" style="@style/DidomiPreferencesLink" />
+</LinearLayout>

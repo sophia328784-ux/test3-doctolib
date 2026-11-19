@@ -1,0 +1,29 @@
+.class public interface abstract Landroidx/media3/exoplayer/source/chunk/ChunkSource;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract getAdjustedSeekPositionUs(JLandroidx/media3/exoplayer/SeekParameters;)J
+.end method
+
+.method public abstract getNextChunk(Landroidx/media3/exoplayer/LoadingInfo;JLjava/util/List;Landroidx/media3/exoplayer/source/chunk/ChunkHolder;)V
+.end method
+
+.method public abstract getPreferredQueueSize(JLjava/util/List;)I
+.end method
+
+.method public abstract maybeThrowError()V
+.end method
+
+.method public abstract onChunkLoadCompleted(Landroidx/media3/exoplayer/source/chunk/Chunk;)V
+.end method
+
+.method public abstract onChunkLoadError(Landroidx/media3/exoplayer/source/chunk/Chunk;ZLandroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy$LoadErrorInfo;Landroidx/media3/exoplayer/upstream/LoadErrorHandlingPolicy;)Z
+.end method
+
+.method public abstract release()V
+.end method
+
+.method public abstract shouldCancelLoad(JLandroidx/media3/exoplayer/source/chunk/Chunk;Ljava/util/List;)Z
+.end method

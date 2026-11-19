@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/didomi_view_tv_secondary_background" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/list_ctv_vendor_detail" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="48.0dp" android:layout_marginStart="48.0dp" />
+    <View android:layout_gravity="bottom" android:background="@drawable/didomi_tv_purposes_gradient_bottom" android:layout_width="match_parent" android:layout_height="@dimen/didomi_tv_preferences_foreground_height_default" android:layout_marginLeft="@dimen/didomi_tv_shadow" android:layout_marginStart="@dimen/didomi_tv_shadow" />
+</FrameLayout>

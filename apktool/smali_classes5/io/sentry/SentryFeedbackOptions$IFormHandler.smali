@@ -1,0 +1,14 @@
+.class public interface abstract Lio/sentry/SentryFeedbackOptions$IFormHandler;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lio/sentry/SentryFeedbackOptions;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "IFormHandler"
+.end annotation

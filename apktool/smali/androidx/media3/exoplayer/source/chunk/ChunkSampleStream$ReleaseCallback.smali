@@ -1,0 +1,19 @@
+.class public interface abstract Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream$ReleaseCallback;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "ReleaseCallback"
+.end annotation
+
+
+# virtual methods
+.method public abstract onSampleStreamReleased(Landroidx/media3/exoplayer/source/chunk/ChunkSampleStream;)V
+.end method

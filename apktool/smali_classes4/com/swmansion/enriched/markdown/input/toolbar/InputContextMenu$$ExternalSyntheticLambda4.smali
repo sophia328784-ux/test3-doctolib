@@ -1,0 +1,32 @@
+.class public final synthetic Lcom/swmansion/enriched/markdown/input/toolbar/InputContextMenu$$ExternalSyntheticLambda4;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function1;
+
+
+# direct methods
+.method public synthetic constructor <init>()V
+    .locals 0
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 0
+    check-cast p1, Lcom/swmansion/enriched/markdown/input/toolbar/FormatMenuConfig;
+
+    invoke-static {p1}, Lcom/swmansion/enriched/markdown/input/toolbar/InputContextMenu;->$r8$lambda$HBd5Pftj_KZO3k2wWVsXvVpqoR8(Lcom/swmansion/enriched/markdown/input/toolbar/FormatMenuConfig;)Ljava/lang/String;
+
+    move-result-object p1
+
+    return-object p1
+.end method

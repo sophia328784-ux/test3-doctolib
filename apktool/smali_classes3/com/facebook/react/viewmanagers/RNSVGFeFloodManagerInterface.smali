@@ -1,0 +1,29 @@
+.class public interface abstract Lcom/facebook/react/viewmanagers/RNSVGFeFloodManagerInterface;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/facebook/react/uimanager/ViewManagerWithGeneratedInterface;
+
+
+# virtual methods
+.method public abstract setFloodColor(Landroid/view/View;Lcom/facebook/react/bridge/Dynamic;)V
+.end method
+
+.method public abstract setFloodOpacity(Landroid/view/View;F)V
+.end method
+
+.method public abstract setHeight(Landroid/view/View;Lcom/facebook/react/bridge/Dynamic;)V
+.end method
+
+.method public abstract setResult(Landroid/view/View;Ljava/lang/String;)V
+.end method
+
+.method public abstract setWidth(Landroid/view/View;Lcom/facebook/react/bridge/Dynamic;)V
+.end method
+
+.method public abstract setX(Landroid/view/View;Lcom/facebook/react/bridge/Dynamic;)V
+.end method
+
+.method public abstract setY(Landroid/view/View;Lcom/facebook/react/bridge/Dynamic;)V
+.end method

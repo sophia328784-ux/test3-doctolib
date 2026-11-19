@@ -1,0 +1,69 @@
+.class public final Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen$special$$inlined$observable$7;
+.super Lkotlin/properties/ObservableProperty;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;-><init>(Lcom/facebook/react/uimanager/ThemedReactContext;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic this$0:Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/Object;Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;)V
+    .locals 0
+
+    iput-object p2, p0, Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen$special$$inlined$observable$7;->this$0:Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;
+
+    .line 33
+    invoke-direct {p0, p1}, Lkotlin/properties/ObservableProperty;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected afterChange(Lkotlin/reflect/KProperty;Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
+
+    const-string v0, "property"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 34
+    check-cast p3, Ljava/lang/String;
+
+    check-cast p2, Ljava/lang/String;
+
+    .line 35
+    invoke-static {p3, p2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 36
+    iget-object p1, p0, Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen$special$$inlined$observable$7;->this$0:Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;
+
+    invoke-virtual {p1}, Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;->getReactContext()Lcom/facebook/react/uimanager/ThemedReactContext;
+
+    move-result-object p2
+
+    invoke-static {p2, p3}, Lcom/swmansion/rnscreens/gamma/helpers/SystemDrawableKt;->getSystemDrawableResource(Landroid/content/Context;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lcom/swmansion/rnscreens/gamma/tabs/TabsScreen;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_0
+    return-void
+.end method

@@ -1,0 +1,19 @@
+.class public final Lio/didomi/sdk/md;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public static a(Lio/didomi/sdk/ld;Lio/didomi/sdk/qe;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lio/didomi/sdk/ld;->a:Lio/didomi/sdk/qe;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract synthetic injectMembers(Ljava/lang/Object;)V
+.end method

@@ -1,0 +1,112 @@
+.class public final Lexpo/modules/kotlin/types/TypeConverterProviderImpl$createCachedPrimitiveArrayConverters$$inlined$createTrivialTypeConverter$4;
+.super Lexpo/modules/kotlin/types/DynamicAwareTypeConverters;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lexpo/modules/kotlin/types/TypeConverterProviderImpl;->createCachedPrimitiveArrayConverters()Ljava/util/Map;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic $cppRequireType:Lexpo/modules/kotlin/jni/ExpectedType;
+
+
+# direct methods
+.method public constructor <init>(Lexpo/modules/kotlin/jni/ExpectedType;)V
+    .locals 0
+
+    iput-object p1, p0, Lexpo/modules/kotlin/types/TypeConverterProviderImpl$createCachedPrimitiveArrayConverters$$inlined$createTrivialTypeConverter$4;->$cppRequireType:Lexpo/modules/kotlin/jni/ExpectedType;
+
+    .line 65
+    invoke-direct {p0}, Lexpo/modules/kotlin/types/DynamicAwareTypeConverters;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public convertFromAny(Ljava/lang/Object;Lexpo/modules/kotlin/AppContext;Z)Ljava/lang/Object;
+    .locals 0
+
+    const-string p2, "value"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 71
+    check-cast p1, [F
+
+    return-object p1
+.end method
+
+.method public convertFromDynamic(Lcom/facebook/react/bridge/Dynamic;Lexpo/modules/kotlin/AppContext;Z)Ljava/lang/Object;
+    .locals 3
+
+    const-string p2, "value"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 75
+    invoke-interface {p1}, Lcom/facebook/react/bridge/Dynamic;->asArray()Lcom/facebook/react/bridge/ReadableArray;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    .line 76
+    invoke-interface {p1}, Lcom/facebook/react/bridge/ReadableArray;->size()I
+
+    move-result p2
+
+    new-array p3, p2, [F
+
+    const/4 v0, 0x0
+
+    :goto_0
+    if-ge v0, p2, :cond_0
+
+    .line 77
+    invoke-interface {p1, v0}, Lcom/facebook/react/bridge/ReadableArray;->getDouble(I)D
+
+    move-result-wide v1
+
+    double-to-float v1, v1
+
+    aput v1, p3, v0
+
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-object p3
+
+    .line 75
+    :cond_1
+    new-instance p1, Lexpo/modules/kotlin/exception/DynamicCastException;
+
+    const-class p2, Lcom/facebook/react/bridge/ReadableArray;
+
+    invoke-static {p2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object p2
+
+    invoke-direct {p1, p2}, Lexpo/modules/kotlin/exception/DynamicCastException;-><init>(Lkotlin/reflect/KClass;)V
+
+    throw p1
+.end method
+
+.method public getCppRequiredTypes()Lexpo/modules/kotlin/jni/ExpectedType;
+    .locals 1
+
+    .line 74
+    iget-object v0, p0, Lexpo/modules/kotlin/types/TypeConverterProviderImpl$createCachedPrimitiveArrayConverters$$inlined$createTrivialTypeConverter$4;->$cppRequireType:Lexpo/modules/kotlin/jni/ExpectedType;
+
+    return-object v0
+.end method

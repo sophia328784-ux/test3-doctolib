@@ -1,0 +1,26 @@
+.class public interface abstract Lio/sentry/IOptionsObserver;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public abstract setDist(Ljava/lang/String;)V
+.end method
+
+.method public abstract setEnvironment(Ljava/lang/String;)V
+.end method
+
+.method public abstract setProguardUuid(Ljava/lang/String;)V
+.end method
+
+.method public abstract setRelease(Ljava/lang/String;)V
+.end method
+
+.method public abstract setReplayErrorSampleRate(Ljava/lang/Double;)V
+.end method
+
+.method public abstract setSdkVersion(Lio/sentry/protocol/SdkVersion;)V
+.end method
+
+.method public abstract setTags(Ljava/util/Map;)V
+.end method
